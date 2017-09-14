@@ -22,8 +22,6 @@
 # isinstance('string', str)
 # isinstance(123456, int)
 
-# 使用type or isinstance 之后 都会返回Bool ==》 True or False
-
 # print(type(123)) #==> int
 # print(isinstance(123, int))
 
