@@ -1,0 +1,206 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#", 
+  "additionalProperties": false, 
+  "definitions": {}, 
+  "id": "http://example.com/example.json", 
+  "properties": {
+    "alt": {
+      "id": "/properties/alt", 
+      "type": "string"
+    }, 
+    "alt_title": {
+      "id": "/properties/alt_title", 
+      "type": "string"
+    }, 
+    "author": {
+      "additionalItems": false, 
+      "id": "/properties/author", 
+      "items": {
+        "id": "/properties/author/items", 
+        "type": "string"
+      }, 
+      "type": "array"
+    }, 
+    "author_intro": {
+      "id": "/properties/author_intro", 
+      "type": "string"
+    }, 
+    "binding": {
+      "id": "/properties/binding", 
+      "type": "string"
+    }, 
+    "catalog": {
+      "id": "/properties/catalog", 
+      "type": "string"
+    }, 
+    "id": {
+      "id": "/properties/id", 
+      "type": "string"
+    }, 
+    "image": {
+      "id": "/properties/image", 
+      "type": "string"
+    }, 
+    "images": {
+      "additionalProperties": false, 
+      "id": "/properties/images", 
+      "properties": {
+        "large": {
+          "id": "/properties/images/properties/large", 
+          "type": "string"
+        }, 
+        "medium": {
+          "id": "/properties/images/properties/medium", 
+          "type": "string"
+        }, 
+        "small": {
+          "id": "/properties/images/properties/small", 
+          "type": "string"
+        }
+      }, 
+      "required": [
+        "small", 
+        "large", 
+        "medium"
+      ], 
+      "type": "object"
+    }, 
+    "isbn10": {
+      "id": "/properties/isbn10", 
+      "type": "string"
+    }, 
+    "isbn13": {
+      "id": "/properties/isbn13", 
+      "type": "string"
+    }, 
+    "origin_title": {
+      "id": "/properties/origin_title", 
+      "type": "string"
+    }, 
+    "pages": {
+      "id": "/properties/pages", 
+      "type": "string"
+    }, 
+    "price": {
+      "id": "/properties/price", 
+      "type": "string"
+    }, 
+    "pubdate": {
+      "id": "/properties/pubdate", 
+      "type": "string"
+    }, 
+    "publisher": {
+      "id": "/properties/publisher", 
+      "type": "string"
+    }, 
+    "rating": {
+      "additionalProperties": false, 
+      "id": "/properties/rating", 
+      "properties": {
+        "average": {
+          "id": "/properties/rating/properties/average", 
+          "type": "string"
+        }, 
+        "max": {
+          "id": "/properties/rating/properties/max", 
+          "type": "integer"
+        }, 
+        "min": {
+          "id": "/properties/rating/properties/min", 
+          "type": "integer"
+        }, 
+        "numRaters": {
+          "id": "/properties/rating/properties/numRaters", 
+          "type": "integer"
+        }
+      }, 
+      "required": [
+        "max", 
+        "numRaters", 
+        "average", 
+        "min"
+      ], 
+      "type": "object"
+    }, 
+    "subtitle": {
+      "id": "/properties/subtitle", 
+      "type": "string"
+    }, 
+    "summary": {
+      "id": "/properties/summary", 
+      "type": "string"
+    }, 
+    "tags": {
+      "additionalItems": false, 
+      "id": "/properties/tags", 
+      "items": {
+        "additionalProperties": false, 
+        "id": "/properties/tags/items", 
+        "properties": {
+          "count": {
+            "id": "/properties/tags/items/properties/count", 
+            "type": "integer"
+          }, 
+          "name": {
+            "id": "/properties/tags/items/properties/name", 
+            "type": "string"
+          }, 
+          "title": {
+            "id": "/properties/tags/items/properties/title", 
+            "type": "string"
+          }
+        }, 
+        "required": [
+          "count", 
+          "name", 
+          "title"
+        ], 
+        "type": "object"
+      }, 
+      "type": "array"
+    }, 
+    "title": {
+      "id": "/properties/title", 
+      "type": "string"
+    }, 
+    "translator": {
+      "additionalItems": false, 
+      "id": "/properties/translator", 
+      "items": {
+        "description": "This accepts anything, as long as it's valid JSON.", 
+        "title": "Empty Object"
+      }, 
+      "type": "array"
+    }, 
+    "url": {
+      "id": "/properties/url", 
+      "type": "string"
+    }
+  }, 
+  "required": [
+    "rating", 
+    "subtitle", 
+    "pubdate", 
+    "image", 
+    "binding", 
+    "images", 
+    "alt", 
+    "id", 
+    "author", 
+    "author_intro", 
+    "tags", 
+    "origin_title", 
+    "price", 
+    "translator", 
+    "catalog", 
+    "pages", 
+    "publisher", 
+    "isbn10", 
+    "isbn13", 
+    "alt_title", 
+    "url", 
+    "title", 
+    "summary"
+  ], 
+  "type": "object"
+}
