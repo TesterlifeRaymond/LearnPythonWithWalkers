@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#", 
+  "definitions": {}, 
+  "id": "http://example.com/example.json", 
+  "properties": {
+    "error_code": {
+      "default": 0, 
+      "description": "An explanation about the purpose of this instance.", 
+      "examples": [
+        "0"
+      ], 
+      "id": "/properties/error_code", 
+      "title": "The error_code schema.", 
+      "type": "integer"
+    }, 
+    "reason": {
+      "default": "success", 
+      "description": "An explanation about the purpose of this instance.", 
+      "examples": [
+        "success"
+      ], 
+      "id": "/properties/reason", 
+      "title": "The reason schema.", 
+      "type": "string"
+    }, 
+    "result": {
+      "id": "/properties/result", 
+      "items": {
+        "id": "/properties/result/items", 
+        "properties": {
+          "date": {
+            "default": "\u524d45\u5e7401\u670801\u65e5", 
+            "description": "An explanation about the purpose of this instance.", 
+            "examples": [
+              "\u524d45\u5e7401\u670801\u65e5"
+            ], 
+            "id": "/properties/result/items/properties/date", 
+            "title": "The date schema.", 
+            "type": "string"
+          }, 
+          "day": {
+            "default": "1/1", 
+            "description": "An explanation about the purpose of this instance.", 
+            "examples": [
+              "1/1"
+            ], 
+            "id": "/properties/result/items/properties/day", 
+            "title": "The day schema.", 
+            "type": "string"
+          }, 
+          "e_id": {
+            "default": "1", 
+            "description": "An explanation about the purpose of this instance.", 
+            "examples": [
+              "1"
+            ], 
+            "id": "/properties/result/items/properties/e_id", 
+            "title": "The e_id schema.", 
+            "type": "string"
+          }, 
+          "title": {
+            "default": "\u7f57\u9a6c\u5171\u548c\u56fd\u5f00\u59cb\u4f7f\u7528\u5112\u7565\u5386", 
+            "description": "An explanation about the purpose of this instance.", 
+            "examples": [
+              "\u7f57\u9a6c\u5171\u548c\u56fd\u5f00\u59cb\u4f7f\u7528\u5112\u7565\u5386"
+            ], 
+            "id": "/properties/result/items/properties/title", 
+            "title": "The title schema.", 
+            "type": "string"
+          }
+        }, 
+        "type": "object"
+      }, 
+      "type": "array"
+    }
+  }, 
+  "type": "object"
+}

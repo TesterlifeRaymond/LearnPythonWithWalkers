@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>TestReport_1507214463</title>
+    <meta name="generator" content="BSTestRunner 0.8.4"/>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    
+<style type="text/css" media="screen">
+
+/* -- css div popup ------------------------------------------------------------------------ */
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #99CCFF;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 10pt;
+    width: 1200px;
+}
+
+/* -- report ------------------------------------------------------------------------ */
+
+#show_detail_line .label {
+    font-size: 85%;
+    cursor: pointer;
+}
+
+#show_detail_line {
+    margin: 2em auto 1em auto;
+}
+
+#total_row  { font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+</style>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class="container">
+    <div class='heading'>
+<h1>TestReport_1507214463</h1>
+<p><strong>Start Time:</strong> 2017-10-05 22:41:03</p>
+<p><strong>Duration:</strong> 0:00:02.870036</p>
+<p><strong>Status:</strong> <span class="text text-success">Pass <strong>14</strong></span></p>
+
+<p class='description'>\Automation-TestReport</p>
+</div>
+
+
+    
+<p id='show_detail_line'>
+<span class="label label-primary" onclick="showCase(0)">Summary</span>
+<span class="label label-danger" onclick="showCase(1)">Failed</span>
+<span class="label label-default" onclick="showCase(2)">All</span>
+</p>
+<table id='result_table' class="table">
+    <thead>
+        <tr id='header_row'>
+            <th>Test Group/Test case</td>
+            <th>Count</td>
+            <th>Pass</td>
+            <th>Fail</td>
+            <th>Error</td>
+            <th>View</td>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr class='text text-success'>
+    <td>test_douban_book.DouBanBooks:  pass </td>
+    <td>3</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c1',3)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_get_douban_book_api: 这是 test_get_douban_book_api docstring</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: 当前调用函数 get,
+当前函数入参包含 (&lt;class 'test_douban_book.DouBanBooks'&gt;, 'https://api.douban.com/v2/book/6548683')
+当前函数keywords入参包含 {}
+当前调用函数 request,
+当前函数入参包含 (&lt;class 'test_douban_book.DouBanBooks'&gt;, 'get', 'https://api.douban.com/v2/book/6548683')
+当前函数keywords入参包含 {'params': None}
+ kwarg
+        # method : get, post, put, delete, head, option
+        ： headers
+        ： cookies
+        ： json={1: 2, 3, 4}
+        ： data = {}
+        
+当前测试方法request， 执行完成，耗时 0.5545077323913574
+ 这是get方法的docstring 
+当前测试方法get， 执行完成，耗时 0.5545077323913574
+ 这是 test_get_douban_book_api docstring 
+当前测试方法test_get_douban_book_api， 执行完成，耗时 0.5605080127716064
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_post_doiban_book_api: pass</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: 当前调用函数 get,
+当前函数入参包含 (&lt;class 'test_douban_book.DouBanBooks'&gt;, 'https://api.douban.com/v2/book/search?q=鲁滨逊漂流记')
+当前函数keywords入参包含 {}
+当前调用函数 request,
+当前函数入参包含 (&lt;class 'test_douban_book.DouBanBooks'&gt;, 'get', 'https://api.douban.com/v2/book/search?q=鲁滨逊漂流记')
+当前函数keywords入参包含 {'params': None}
+ kwarg
+        # method : get, post, put, delete, head, option
+        ： headers
+        ： cookies
+        ： json={1: 2, 3, 4}
+        ： data = {}
+        
+当前测试方法request， 执行完成，耗时 0.14499926567077637
+ 这是get方法的docstring 
+当前测试方法get， 执行完成，耗时 0.14549851417541504
+ pass 
+当前测试方法test_post_doiban_book_api， 执行完成，耗时 0.17499947547912598
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_post_douban_book: pass</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: https://api.douban.com/v2/book/search?q=三国演义
+当前调用函数 get,
+当前函数入参包含 (&lt;class 'test_douban_book.DouBanBooks'&gt;, 'https://api.douban.com/v2/book/search?q=三国演义')
+当前函数keywords入参包含 {}
+当前调用函数 request,
+当前函数入参包含 (&lt;class 'test_douban_book.DouBanBooks'&gt;, 'get', 'https://api.douban.com/v2/book/search?q=三国演义')
+当前函数keywords入参包含 {'params': None}
+ kwarg
+        # method : get, post, put, delete, head, option
+        ： headers
+        ： cookies
+        ： json={1: 2, 3, 4}
+        ： data = {}
+        
+当前测试方法request， 执行完成，耗时 0.17399883270263672
+ 这是get方法的docstring 
+当前测试方法get， 执行完成，耗时 0.17399883270263672
+ pass 
+当前测试方法test_post_douban_book， 执行完成，耗时 0.19049835205078125
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='text text-success'>
+    <td>test_menu_api.MenuApi: pass</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c2',5)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_api_result_method_get_ok: pass</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: 当前调用函数 get,
+当前函数入参包含 (&lt;class 'test_menu_api.MenuApi'&gt;, 'http://apis.juhe.cn/cook/query.php?menu=红烧排骨&amp;')
+当前函数keywords入参包含 {'params': 'key=338ce1ecb756bf7ca4772fbb9f11cd75'}
+当前调用函数 request,
+当前函数入参包含 (&lt;class 'test_menu_api.MenuApi'&gt;, 'get', 'http://apis.juhe.cn/cook/query.php?menu=红烧排骨&amp;')
+当前函数keywords入参包含 {'params': 'key=338ce1ecb756bf7ca4772fbb9f11cd75'}
+ kwarg
+        # method : get, post, put, delete, head, option
+        ： headers
+        ： cookies
+        ： json={1: 2, 3, 4}
+        ： data = {}
+        
+当前测试方法request， 执行完成，耗时 0.3684983253479004
+ 这是get方法的docstring 
+当前测试方法get， 执行完成，耗时 0.3684983253479004
+ pass 
+当前测试方法test_api_result_method_get_ok， 执行完成，耗时 0.36950016021728516
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_api_result_method_post_is_ok: pass</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
+        pass</a>
+
+    <div id='div_pt2.2' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.2: 当前调用函数 post,
+当前函数入参包含 (&lt;class 'test_menu_api.MenuApi'&gt;, 'http://apis.juhe.cn/cook/query.php')
+当前函数keywords入参包含 {'data': {'menu': '红烧排骨', 'key': '338ce1ecb756bf7ca4772fbb9f11cd75'}}
+当前调用函数 request,
+当前函数入参包含 (&lt;class 'test_menu_api.MenuApi'&gt;, 'post', 'http://apis.juhe.cn/cook/query.php')
+当前函数keywords入参包含 {'data': {'menu': '红烧排骨', 'key': '338ce1ecb756bf7ca4772fbb9f11cd75'}}
+ kwarg
+        # method : get, post, put, delete, head, option
+        ： headers
+        ： cookies
+        ： json={1: 2, 3, 4}
+        ： data = {}
+        
+当前测试方法request， 执行完成，耗时 0.2585005760192871
+ 这是post方法的docstring 
+当前测试方法post， 执行完成，耗时 0.2585005760192871
+ pass 
+当前测试方法test_api_result_method_post_is_ok， 执行完成，耗时 0.26000118255615234
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.3' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_api_result_reason_method_post_ok: pass</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.3')" >
+        pass</a>
+
+    <div id='div_pt2.3' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.3: 当前调用函数 get,
+当前函数入参包含 (&lt;class 'test_menu_api.MenuApi'&gt;, 'http://apis.juhe.cn/cook/query.php?menu=红烧排骨&amp;')
+当前函数keywords入参包含 {'params': 'key=338ce1ecb756bf7ca4772fbb9f11cd75'}
+当前调用函数 request,
+当前函数入参包含 (&lt;class 'test_menu_api.MenuApi'&gt;, 'get', 'http://apis.juhe.cn/cook/query.php?menu=红烧排骨&amp;')
+当前函数keywords入参包含 {'params': 'key=338ce1ecb756bf7ca4772fbb9f11cd75'}
+ kwarg
+        # method : get, post, put, delete, head, option
+        ： headers
+        ： cookies
+        ： json={1: 2, 3, 4}
+        ： data = {}
+        
+当前测试方法request， 执行完成，耗时 0.2765233516693115
+ 这是get方法的docstring 
+当前测试方法get， 执行完成，耗时 0.2765233516693115
+ pass 
+当前测试方法test_api_result_reason_method_post_ok， 执行完成，耗时 0.2780001163482666
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.4' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_api_result_title_is_ok_method_get: pass</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.4')" >
+        pass</a>
+
+    <div id='div_pt2.4' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.4: 当前调用函数 get,
+当前函数入参包含 (&lt;class 'test_menu_api.MenuApi'&gt;, 'http://apis.juhe.cn/cook/query.php?menu=红烧排骨&amp;')
+当前函数keywords入参包含 {'params': 'key=338ce1ecb756bf7ca4772fbb9f11cd75'}
+当前调用函数 request,
+当前函数入参包含 (&lt;class 'test_menu_api.MenuApi'&gt;, 'get', 'http://apis.juhe.cn/cook/query.php?menu=红烧排骨&amp;')
+当前函数keywords入参包含 {'params': 'key=338ce1ecb756bf7ca4772fbb9f11cd75'}
+ kwarg
+        # method : get, post, put, delete, head, option
+        ： headers
+        ： cookies
+        ： json={1: 2, 3, 4}
+        ： data = {}
+        
+当前测试方法request， 执行完成，耗时 0.20752477645874023
+ 这是get方法的docstring 
+当前测试方法get， 执行完成，耗时 0.20752477645874023
+ pass 
+当前测试方法test_api_result_title_is_ok_method_get， 执行完成，耗时 0.208998441696167
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.5' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_api_resultcode_method_get_ok: pass</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.5')" >
+        pass</a>
+
+    <div id='div_pt2.5' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.5: 当前调用函数 get,
+当前函数入参包含 (&lt;class 'test_menu_api.MenuApi'&gt;, 'http://apis.juhe.cn/cook/query.php?menu=红烧排骨&amp;')
+当前函数keywords入参包含 {'params': 'key=338ce1ecb756bf7ca4772fbb9f11cd75'}
+当前调用函数 request,
+当前函数入参包含 (&lt;class 'test_menu_api.MenuApi'&gt;, 'get', 'http://apis.juhe.cn/cook/query.php?menu=红烧排骨&amp;')
+当前函数keywords入参包含 {'params': 'key=338ce1ecb756bf7ca4772fbb9f11cd75'}
+ kwarg
+        # method : get, post, put, delete, head, option
+        ： headers
+        ： cookies
+        ： json={1: 2, 3, 4}
+        ： data = {}
+        
+当前测试方法request， 执行完成，耗时 0.2644999027252197
+ 这是get方法的docstring 
+当前测试方法get， 执行完成，耗时 0.2644999027252197
+ pass 
+当前测试方法test_api_resultcode_method_get_ok， 执行完成，耗时 0.26601219177246094
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='text text-success'>
+    <td>test_today_api.TodayApi:  pass </td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c3',5)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_api_result_is_ok_method_get: pass</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: 当前调用函数 get,
+当前函数入参包含 (&lt;class 'test_today_api.TodayApi'&gt;, 'http://v.juhe.cn/todayOnhistory/queryEvent.php')
+当前函数keywords入参包含 {'params': {'key': '1d39d53a70ebed87d5cabbc8b73b96e2', 'date': '10/4'}}
+当前调用函数 request,
+当前函数入参包含 (&lt;class 'test_today_api.TodayApi'&gt;, 'get', 'http://v.juhe.cn/todayOnhistory/queryEvent.php')
+当前函数keywords入参包含 {'params': {'key': '1d39d53a70ebed87d5cabbc8b73b96e2', 'date': '10/4'}}
+ kwarg
+        # method : get, post, put, delete, head, option
+        ： headers
+        ： cookies
+        ： json={1: 2, 3, 4}
+        ： data = {}
+        
+当前测试方法request， 执行完成，耗时 0.12056565284729004
+ 这是get方法的docstring 
+当前测试方法get， 执行完成，耗时 0.12056565284729004
+ pass 
+当前测试方法test_api_result_is_ok_method_get， 执行完成，耗时 0.12056565284729004
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_api_result_is_ok_method_post: pass</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.2')" >
+        pass</a>
+
+    <div id='div_pt3.2' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.2: 当前调用函数 post,
+当前函数入参包含 (&lt;class 'test_today_api.TodayApi'&gt;, 'http://v.juhe.cn/todayOnhistory/queryEvent.php')
+当前函数keywords入参包含 {'data': {'key': '1d39d53a70ebed87d5cabbc8b73b96e2', 'date': '10/4'}}
+当前调用函数 request,
+当前函数入参包含 (&lt;class 'test_today_api.TodayApi'&gt;, 'post', 'http://v.juhe.cn/todayOnhistory/queryEvent.php')
+当前函数keywords入参包含 {'data': {'key': '1d39d53a70ebed87d5cabbc8b73b96e2', 'date': '10/4'}}
+ kwarg
+        # method : get, post, put, delete, head, option
+        ： headers
+        ： cookies
+        ： json={1: 2, 3, 4}
+        ： data = {}
+        
+当前测试方法request， 执行完成，耗时 0.08251476287841797
+ 这是post方法的docstring 
+当前测试方法post， 执行完成，耗时 0.08298730850219727
+ pass 
+当前测试方法test_api_result_is_ok_method_post， 执行完成，耗时 0.08298730850219727
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.3' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_get_title: pass</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.3')" >
+        pass</a>
+
+    <div id='div_pt3.3' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.3: 当前调用函数 post,
+当前函数入参包含 (&lt;class 'test_today_api.TodayApi'&gt;, 'http://v.juhe.cn/todayOnhistory/queryEvent.php')
+当前函数keywords入参包含 {'data': {'key': '1d39d53a70ebed87d5cabbc8b73b96e2', 'date': '10/4'}}
+当前调用函数 request,
+当前函数入参包含 (&lt;class 'test_today_api.TodayApi'&gt;, 'post', 'http://v.juhe.cn/todayOnhistory/queryEvent.php')
+当前函数keywords入参包含 {'data': {'key': '1d39d53a70ebed87d5cabbc8b73b96e2', 'date': '10/4'}}
+ kwarg
+        # method : get, post, put, delete, head, option
+        ： headers
+        ： cookies
+        ： json={1: 2, 3, 4}
+        ： data = {}
+        
+当前测试方法request， 执行完成，耗时 0.08294892311096191
+ 这是post方法的docstring 
+当前测试方法post， 执行完成，耗时 0.08294892311096191
+ pass 
+当前测试方法test_get_title， 执行完成，耗时 0.08446121215820312
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.4' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_jsonschema_valid_success: pass</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.4')" >
+        pass</a>
+
+    <div id='div_pt3.4' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.4: 当前调用函数 post,
+当前函数入参包含 (&lt;class 'test_today_api.TodayApi'&gt;, 'http://v.juhe.cn/todayOnhistory/queryEvent.php')
+当前函数keywords入参包含 {'data': {'key': '1d39d53a70ebed87d5cabbc8b73b96e2', 'date': '10/4'}}
+当前调用函数 request,
+当前函数入参包含 (&lt;class 'test_today_api.TodayApi'&gt;, 'post', 'http://v.juhe.cn/todayOnhistory/queryEvent.php')
+当前函数keywords入参包含 {'data': {'key': '1d39d53a70ebed87d5cabbc8b73b96e2', 'date': '10/4'}}
+ kwarg
+        # method : get, post, put, delete, head, option
+        ： headers
+        ： cookies
+        ： json={1: 2, 3, 4}
+        ： data = {}
+        
+当前测试方法request， 执行完成，耗时 0.08099770545959473
+ 这是post方法的docstring 
+当前测试方法post， 执行完成，耗时 0.08099770545959473
+ pass 
+当前测试方法test_jsonschema_valid_success， 执行完成，耗时 0.0854954719543457
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.5' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_not_have_date: pass</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.5')" >
+        pass</a>
+
+    <div id='div_pt3.5' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.5: 当前调用函数 post,
+当前函数入参包含 (&lt;class 'test_today_api.TodayApi'&gt;, 'http://v.juhe.cn/todayOnhistory/queryEvent.php')
+当前函数keywords入参包含 {'data': {'key': '1d39d53a70ebed87d5cabbc8b73b96e2', 'date': ''}}
+当前调用函数 request,
+当前函数入参包含 (&lt;class 'test_today_api.TodayApi'&gt;, 'post', 'http://v.juhe.cn/todayOnhistory/queryEvent.php')
+当前函数keywords入参包含 {'data': {'key': '1d39d53a70ebed87d5cabbc8b73b96e2', 'date': ''}}
+ kwarg
+        # method : get, post, put, delete, head, option
+        ： headers
+        ： cookies
+        ： json={1: 2, 3, 4}
+        ： data = {}
+        
+当前测试方法request， 执行完成，耗时 0.06800341606140137
+ 这是post方法的docstring 
+当前测试方法post， 执行完成，耗时 0.06800341606140137
+ pass 
+当前测试方法test_not_have_date， 执行完成，耗时 0.06850242614746094
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='text text-success'>
+    <td>test_wechat_api.WeChatApi:  pass </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='text text-success'><div class='testcase'>test_wechat_api_is_ok_method_get: pass</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: 当前调用函数 get,
+当前函数入参包含 (&lt;class 'test_wechat_api.WeChatApi'&gt;, 'http://v.juhe.cn/weixin/query')
+当前函数keywords入参包含 {'params': {'pno': '2', 'ps': '20', 'dtype': 'json', 'key': '4beb9d77d2b95ce9bec6d8363ee5a620'}}
+当前调用函数 request,
+当前函数入参包含 (&lt;class 'test_wechat_api.WeChatApi'&gt;, 'get', 'http://v.juhe.cn/weixin/query')
+当前函数keywords入参包含 {'params': {'pno': '2', 'ps': '20', 'dtype': 'json', 'key': '4beb9d77d2b95ce9bec6d8363ee5a620'}}
+ kwarg
+        # method : get, post, put, delete, head, option
+        ： headers
+        ： cookies
+        ： json={1: 2, 3, 4}
+        ： data = {}
+        
+当前测试方法request， 执行完成，耗时 0.1108086109161377
+ 这是get方法的docstring 
+当前测试方法get， 执行完成，耗时 0.11149191856384277
+ pass 
+当前测试方法test_wechat_api_is_ok_method_get， 执行完成，耗时 0.11702466011047363
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+    </tbody>
+    <tfoot>
+        <tr id='total_row'>
+            <td>Total</td>
+            <td>14</td>
+            <td class="text text-success">14</td>
+            <td class="text text-danger">0</td>
+            <td class="text text-warning">0</td>
+            <td>&nbsp;</td>
+        </tr>
+    </tfoot>
+</table>
+
+    <div id='ending'>&nbsp;</div>
+</div>
+
+</body>
+</html>
