@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#", 
+  "definitions": {}, 
+  "id": "http://example.com/example.json", 
+  "properties": {
+    "auth": {
+      "default": "user", 
+      "description": "An explanation about the purpose of this instance.", 
+      "examples": [
+        "user"
+      ], 
+      "id": "/properties/auth", 
+      "title": "The auth schema.", 
+      "type": "string"
+    }, 
+    "code": {
+      "default": 200, 
+      "description": "An explanation about the purpose of this instance.", 
+      "examples": [
+        "200"
+      ], 
+      "id": "/properties/code", 
+      "title": "The code schema.", 
+      "type": "integer"
+    }, 
+    "message": {
+      "default": "failed", 
+      "description": "An explanation about the purpose of this instance.", 
+      "examples": [
+        "failed"
+      ], 
+      "id": "/properties/message", 
+      "title": "The message schema.", 
+      "type": "string"
+    }, 
+    "username": {
+      "default": "", 
+      "description": "An explanation about the purpose of this instance.", 
+      "examples": [
+        ""
+      ], 
+      "id": "/properties/username", 
+      "title": "The username schema.", 
+      "type": "string"
+    }
+  }, 
+  "type": "object"
+}
